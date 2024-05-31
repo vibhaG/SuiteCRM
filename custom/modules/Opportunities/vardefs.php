@@ -771,7 +771,7 @@ $dictionary['Opportunity'] = array('table' => 'opportunities', 'audited' => true
             'opportunity_aos_product_quotes' =>
                 array(
                     'lhs_module' => 'Opportunities',
-                    'lhs_table' => 'opportunitiesopportunities',
+                    'lhs_table' => 'opportunities',
                     'lhs_key' => 'id',
                     'rhs_module' => 'AOS_Products_Quotes',
                     'rhs_table' => 'aos_products_quotes',
