@@ -768,6 +768,26 @@ $dictionary['Opportunity'] = array('table' => 'opportunities', 'audited' => true
                 'rhs_key' => 'opportunity_id',
                 'relationship_type' => 'one-to-many',
             ),
+            'opportunity_aos_product_quotes' =>
+                array(
+                    'lhs_module' => 'Opportunities',
+                    'lhs_table' => 'opportunitiesopportunities',
+                    'lhs_key' => 'id',
+                    'rhs_module' => 'AOS_Products_Quotes',
+                    'rhs_table' => 'aos_products_quotes',
+                    'rhs_key' => 'parent_id',
+                    'relationship_type' => 'one-to-many',
+            ),
+            'opportunity_aos_line_item_groups' =>
+                array(
+                    'lhs_module' => 'Opportunities',
+                    'lhs_table' => 'opportunities',
+                    'lhs_key' => 'id',
+                    'rhs_module' => 'AOS_Line_Item_Groups',
+                    'rhs_table' => 'aos_line_item_groups',
+                    'rhs_key' => 'parent_id',
+                    'relationship_type' => 'one-to-many',
+                ),
     )
 //This enables optimistic locking for Saves From EditView
 , 'optimistic_locking' => true,
