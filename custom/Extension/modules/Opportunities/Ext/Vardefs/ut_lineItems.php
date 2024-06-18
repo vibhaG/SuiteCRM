@@ -285,11 +285,12 @@ $dictionary['Opportunity']['fields']['aos_products_quotes'] =
       'name' => 'aos_products_quotes',
       'vname' => 'LBL_AOS_PRODUCT_QUOTES',
       'type' => 'link',
-      'relationship' => 'opportunities_aos_product_quotes',
+      'relationship' => 'opportunities_aos_products_quotes_1',
       'module' => 'AOS_Products_Quotes',
       'bean_name' => 'AOS_Products_Quotes',
       'source' => 'non-db',
   );
+
 $dictionary['Opportunity']['fields']['aos_line_item_groups'] =
 array(
     'name' => 'aos_line_item_groups',
@@ -301,7 +302,7 @@ array(
     'source' => 'non-db',
 );
 
-$dictionary['Opportunity']['relationships']['aos_product_quotes'] =
+$dictionary['Opportunity']['relationships']['aos_product_quotes_1'] =
 array(
     'lhs_module' => 'Opportunities',
     'lhs_table' => 'opportunities',
