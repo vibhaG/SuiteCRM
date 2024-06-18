@@ -778,7 +778,7 @@ $dictionary['Opportunity'] = array('table' => 'opportunities', 'audited' => true
                     'rhs_key' => 'parent_id',
                     'relationship_type' => 'one-to-many',
             ),
-            'opportunity_aos_line_item_groups' =>
+            'opportunities_aos_products_quotes_1' =>
                 array(
                     'lhs_module' => 'Opportunities',
                     'lhs_table' => 'opportunities',
