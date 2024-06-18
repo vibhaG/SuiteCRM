@@ -39,8 +39,8 @@ array(
 );
 $dictionary['Opportunity']['fields']['total_amt'] =
 array(
-    'name' => 'total_amt_usdollar',
-    'vname' => 'LBL_TOTAL_AMT_USDOLLAR',
+    'name' => 'total_amt',
+    'vname' => 'LBL_TOTAL_AMT',
     'type' => 'currency',
     'group' => 'total_amt',
     'disable_num_format' => true,
