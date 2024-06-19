@@ -314,8 +314,8 @@ array(
 );
 $dictionary['Opportunity']['relationships']['aos_invoices_aos_line_item_groups'] =
 array(
-    'lhs_module' => 'AOS_Invoices',
-    'lhs_table' => 'aos_invoices',
+    'lhs_module' => 'Opportunities',
+    'lhs_table' => 'opportunities',
     'lhs_key' => 'id',
     'rhs_module' => 'AOS_Line_Item_Groups',
     'rhs_table' => 'aos_line_item_groups',
