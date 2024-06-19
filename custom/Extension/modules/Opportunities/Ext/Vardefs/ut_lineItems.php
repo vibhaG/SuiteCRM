@@ -312,7 +312,7 @@ array(
     'rhs_key' => 'parent_id',
     'relationship_type' => 'one-to-many',
 );
-$dictionary['Opportunity']['relationships']['aos_invoices_aos_line_item_groups'] =
+$dictionary['Opportunity']['relationships']['opportunities_aos_line_item_groups'] =
 array(
     'lhs_module' => 'Opportunities',
     'lhs_table' => 'opportunities',
