@@ -87,7 +87,7 @@ class Opportunity extends SugarBean
 
     public $importable = true;
     public $object_name = "Opportunity";
-//	public $lineItems = true;
+  	public $lineItems = true;
 
     // This is used to retrieve related fields from form posts.
     public $additional_column_fields = array('assigned_user_name', 'assigned_user_id', 'account_name', 'account_id', 'contact_id', 'task_id', 'note_id', 'meeting_id', 'call_id', 'email_id'
@@ -369,8 +369,13 @@ class Opportunity extends SugarBean
         }
 
         require_once('modules/Opportunities/SaveOverload.php');
+       // require_once('modules/AOS_Products_Quotes/AOS_Utils.php');
+       require_once('modules/AOS_Line_Item_Groups/AOS_Line_Item_Groups.php');
+       
+	$productQuoteGroup = BeanFactory::newBean('AOS_Line_Item_Groups');
+        $productQuoteGroup->save_groups($_POST, $this, 'group_');
+	 perform_save($this);
 
-        perform_save($this);
         return parent::save($check_notify);
     }
 
@@ -477,6 +482,12 @@ class Opportunity extends SugarBean
         }
         return $ret_array;
     }
+    public function mark_deleted($id)
+   {
+       $productQuote = BeanFactory::newBean('AOS_Products_Quotes');
+       $productQuote->mark_lines_deleted($this);
+       parent::mark_deleted($id);
+   }
 }
 function getCurrencyType()
 {
