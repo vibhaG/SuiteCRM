@@ -369,9 +369,6 @@ class Opportunity extends SugarBean
         }
 
         require_once('modules/Opportunities/SaveOverload.php');
-        require_once('modules/AOS_Line_Item_Groups/AOS_Line_Item_Groups.php');
-        $productQuoteGroup = BeanFactory::newBean('AOS_Line_Item_Groups');
-        $productQuoteGroup->save_groups($_POST, $this, 'group_');
 
         perform_save($this);
         return parent::save($check_notify);
