@@ -14,10 +14,5 @@ $layout_defs["UT_Installation"]["subpanel_setup"]['ut_sub_installation_ut_instal
     array (
       'widget_class' => 'SubPanelTopCreateButton',
     ),
-    1 => 
-    array (
-      'widget_class' => 'SubPanelTopSelectButton',
-      'mode' => 'MultiSelect',
-    ),
   ),
 );
