@@ -15,3 +15,6 @@ $mod_strings['LBL_MODULE_TITLE'] = 'Service Visit: Home';
 $mod_strings['LBL_JOB_DESCRIPTION'] = 'Job Description';
 $mod_strings['LBL_PENDING_PROBLEM'] = 'Pending Problem';
 $mod_strings['LBL_SPARES_USED'] = 'Spares Used';
+
+$mod_strings['LBL_SOMETHING_WRONG'] = 'Opps, Something went wrong, Please try again later';
+$mod_strings['LBL_SERVICE_VISIT_UPDATED'] = 'Thank you for providing the updates, we will process the information as you have requested for.';
