@@ -12,3 +12,6 @@ $mod_strings['LNK_PROJECT_TASK_LIST'] = 'View Service Visits';
 $mod_strings['LBL_IMPORT_PROJECT_TASKS'] = 'Import Service Visit';
 $mod_strings['LBL_MODULE_NAME'] = 'Service Visits';
 $mod_strings['LBL_MODULE_TITLE'] = 'Service Visit: Home';
+$mod_strings['LBL_JOB_DESCRIPTION'] = 'Job Description';
+$mod_strings['LBL_PENDING_PROBLEM'] = 'Pending Problem';
+$mod_strings['LBL_SPARES_USED'] = 'Spares Used';

@@ -114,6 +114,30 @@ array (
             'name' => 'ut_installation_projecttask_1_name',
           ),
         ),
+        8 => 
+        array (
+          0 => 
+          array (
+            'name' => 'job_description',
+            'label' => 'LBL_JOB_DESCRIPTION',
+          ),
+        ),
+        9 => 
+        array (
+          0 => 
+          array (
+            'name' => 'pending_problem',
+            'label' => 'LBL_PENDING_PROBLEM',
+          ),
+        ),
+        10 => 
+        array (
+          0 => 
+          array (
+            'name' => 'spares_used',
+            'label' => 'LBL_SPARES_USED',
+          ),
+        ),
       ),
       'LBL_PANEL_TIMELINE' => 
       array (
