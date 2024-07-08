@@ -39,6 +39,7 @@ if($oServiceVisit->status == 'Completed'){
 
 $sCustomerName= $sCustomerPhone = $sCustomerEmail = $sServiceContractID = $sServiceEnginerName = $sSystemName = 
 $sSystemModel = $sSerialNumber = $sFirmwareVersion = $sSoftwareVersion = $sVisitNumber = $sEquipmentID = $sJobDescription = $sServiceContractName = '';
+$sSubInstallationsTRs = '';
 /*
 $sCustomerName='111';
 $sCustomerPhone='222';
@@ -53,7 +54,7 @@ $sSoftwareVersion='0000';
 $sVisitNumber = 'aaa';
 $sEquipmentID = 'bbb';
 */
-$sContractId = $sInstallationId = $sAccountsId = $sProductId = '';
+$sContractId = $sInstallationId = $sAccountsId = $sProductId = $sSubInstallationID = '';
 
 $sVisitNumber = $oServiceVisit->task_number;
 $sJobDescription = $oServiceVisit->job_description;
@@ -78,6 +79,26 @@ if(!empty($sSalesContract->ut_installation_project_1ut_installation_ida)) {
     $sSoftwareVersion = $oInstallation->software_version;
     $sFirmwareVersion = $oInstallation->firmware_version;
     $sSystemName = $oInstallation->installation_id;
+    
+    $oSubInstallations = $oInstallation->get_linked_beans("ut_sub_installation_ut_installation","UT_Sub_Installation");
+    foreach($oSubInstallations as $oSubInstallation)
+    {
+        $sSubProdName = '';
+        if(!empty($oSubInstallation->aos_products_id_c)){
+            $oSubInstProd = BeanFactory::getBean('AOS_Products',$oSubInstallation->aos_products_id_c);
+            $sSubProdName = $oSubInstProd->name;
+        }
+        $sSubInstallationsTRs .= '<tr>
+            <td>'.$oSubInstallation->name.'</td>
+            <td>'.$oSubInstallation->serial_number.'</td>
+            <td>'.$sSubProdName.'</td>
+        </tr>';
+    }
+    if(empty($sSubInstallationsTRs)){
+        $sSubInstallationsTRs .= '<tr>
+            <td colspan="3">No Sub-Installations found</td>
+        </tr>';
+    }
 }
 
 if(!empty($sInstallationId)) {
@@ -129,6 +150,7 @@ $xtpl->assign("sSystemModel", $sSystemModel);
 $xtpl->assign("sSerialNumber", $sSerialNumber);
 $xtpl->assign("sFirmwareVersion", $sFirmwareVersion);
 $xtpl->assign("sSoftwareVersion", $sSoftwareVersion);
+$xtpl->assign("sSubInstallationsTRs", $sSubInstallationsTRs);
 
 $xtpl->assign("sVisitNumber", $sVisitNumber);
 $xtpl->assign("sEquipmentID", $sEquipmentID);

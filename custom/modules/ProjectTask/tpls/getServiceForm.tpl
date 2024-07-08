@@ -158,6 +158,13 @@
                                       <input type="text" class="form-control" id="software_version" name="software_version" placeholder="Software Version" value="{sSoftwareVersion}">
                                    </div>
                                 </div>
+                                <div>
+                                   <p style="font-weight:bold;">Sub Installation</p>
+                                   <table width="100%">
+                                       {sSubInstallationsTRs}
+                                   </table>
+                                   <br/>
+                                </div>
                                 <div class="form-group">
                                    <label for="equipment_id" class="">Equipment ID</label>
                                    <input type="text" class="form-control" id="equipment_id" name="equipment_id" placeholder="Equipment ID" readonly="readonly" value="{sEquipmentID}">
