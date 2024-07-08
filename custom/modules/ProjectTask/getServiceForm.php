@@ -77,6 +77,7 @@ if(!empty($sSalesContract->ut_installation_project_1ut_installation_ida)) {
     $sSerialNumber = $oInstallation->serial_number;
     $sSoftwareVersion = $oInstallation->software_version;
     $sFirmwareVersion = $oInstallation->firmware_version;
+    $sSystemName = $oInstallation->installation_id;
 }
 
 if(!empty($sInstallationId)) {
@@ -93,6 +94,7 @@ if(!empty($sInstallationId)) {
         $sProductId = $oInstallation->aos_products_id_c;
         $oProduct = BeanFactory::getBean('AOS_Products',$sProductId);
         $sEquipmentID = $oProduct->part_number;
+        $sSystemModel = $oProduct->name;
     }
 }
 
