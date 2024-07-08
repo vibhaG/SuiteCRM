@@ -47,6 +47,7 @@ document.getElementById('percent_complete').value=percent_value;}
 $(document).ready(function() {
     $('#copyButtonServiceForm').click(function() {
         var textToCopy = $('#textToCopy').val();
+        window.open(textToCopy, '_blank').focus();
         navigator.clipboard.writeText(textToCopy).then(function() {
             $('#copyButtonServiceForm').val('Copied!').addClass('copied');
             setTimeout(function() {
