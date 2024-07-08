@@ -153,6 +153,12 @@ array (
           array (
             'name' => 'ut_installation_project_1_name',
           ),
+          1 => 
+          array (
+            'name' => 'account_name',
+            'studio' => 'visible',
+            'label' => 'LBL_ACCOUNT_NAME',
+          ),
         ),
       ),
     ),

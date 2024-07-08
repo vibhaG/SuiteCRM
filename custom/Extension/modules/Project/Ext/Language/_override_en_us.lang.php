@@ -1,5 +1,5 @@
 <?php
-// created: 2024-07-02 13:40:15
+// created: 2024-07-08 16:28:39
 $mod_strings['LNK_NEW_PROJECT'] = 'Create Service Contract';
 $mod_strings['LNK_PROJECT_LIST'] = 'View Service Contracts List';
 $mod_strings['LBL_LIST_FORM_TITLE'] = 'Service Contract List';
@@ -16,5 +16,6 @@ $mod_strings['LBL_ADD_NEW_TASK'] = 'Add New Visit';
 $mod_strings['LBL_DELETE_TASK'] = 'Delete Visit';
 $mod_strings['LBL_TASK_NAME'] = 'Visit Name';
 $mod_strings['LBL_VISIT_TYPE'] = 'Visit Type';
-
-
+$mod_strings['LBL_ACCOUNT_NAME'] = 'Account';
+$mod_strings['LBL_ACCOUNT_ID'] = 'Account ID (Relate)';
+$mod_strings['LBL_ACCOUNT_NAME_ACCOUNT_ID'] = 'Account (related Account ID)';
