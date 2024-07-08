@@ -68,6 +68,13 @@
                     </h3>
                 </div>
 <!-- END: invalidcid -->
+<!-- BEGIN: alreadycompleted -->
+                <div class="card-body" style="padding: 3.25rem;">
+                    <h3 class="title">
+                        {MOD.LBL_ALREADY_COMPLETED_TITLE}
+                    </h3>
+                </div>
+<!-- END: alreadycompleted -->
 <!-- BEGIN: consentformdocument -->
                             <div class="card-body" style="padding: 3.25rem;">
                                 <div class="row">
@@ -85,9 +92,10 @@
                                     <p>This Service Visit Report form is designed to document the details and outcomes of each service visit conducted by our technicians. Please ensure that all sections are filled out thoroughly and accurately. This form will be used to improve our service quality and maintain a high level of customer satisfaction. Thank you for your attention to detail and commitment to excellence.</p>
                                 </div>
                              </div>
-                             <form name="gdpr_consent_request" id="gdpr_consent_request" method="POST" enctype="multipart/form-data" action="{submiturl}/index.php?entryPoint=CaptureServiceVisit">
+                             <form name="service_request_form" id="service_request_form" method="POST" enctype="multipart/form-data" action="{submiturl}/index.php?entryPoint=CaptureServiceVisit">
                                 <input type="hidden" name="record_id" value="{record_id}">
                                 <input type="hidden" name="formodule" value="{formodule}">
+                                <input type="hidden" name="markCompleted" id="markCompleted" value="">
                                 
                                 <div class="form-row">
                                    <div class="form-group col-md-12">
@@ -107,8 +115,8 @@
                                 </div>
                                 <div class="form-row">
                                    <div class="form-group col-md-6">
-                                      <label for="service_visit_type" class="requiredMark">Visit type</label>
-                                      <select id="service_visit_type" name="service_visit_type" class="form-control js-select-simple" required="required">
+                                      <label for="service_visit_type" class="">Visit type</label>
+                                      <select id="service_visit_type" name="service_visit_type" class="form-control js-select-simple" readonly="readonly" disabled="disabled" >
                                          <option disabled="disabled" selected="selected">Choose Visit</option>
                                          {visit_type_list}
                                       </select>
@@ -119,8 +127,8 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                   <label for="service_contract_id">Service Contract ID</label>
-                                   <input type="text" class="form-control" id="service_contract_id" name="service_contract_id" placeholder="Service Contract ID" readonly="readonly" value="{sServiceContractID}">
+                                   <label for="service_contract_id">Service Contract</label>
+                                   <input type="text" class="form-control" id="service_contract_id" name="service_contract_id" placeholder="Service Contract" readonly="readonly" value="{sServiceContractID}">
                                 </div>
                                 <div class="form-group">
                                    <label for="service_enginer_name" class="requiredMark">Service Engineer Name</label>
@@ -171,7 +179,8 @@
                                    <p>We will use the information you provided on this form to be in touch with you and to provide updates and marketing. Please let us know all the ways you would like to hear from us:</p>
                                    </div>
                                 </div>
-                                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                                <button type="button" id="submitButton" class="btn btn-success btn-lg">Save</button>
+                                <button type="button" id="saveCompletedButton" class="btn btn-primary btn-lg" >Save and mark completed</button>
                              </form>
                           </div>
 <!-- END: consentformdocument -->
@@ -189,6 +198,18 @@
              } catch (err) {
                  console.log(err);
              }
+             
+            $('#submitButton').click(function() {
+               $('#markCompleted').val('');
+               $('#service_request_form').submit();
+            });
+
+            $('#saveCompletedButton').click(function() {
+                alert('come shere');
+                $('#markCompleted').val('Yes');
+                $('#service_request_form').submit();
+            });
+             
          })(jQuery);
       </script>
    </body>

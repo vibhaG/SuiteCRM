@@ -18,3 +18,6 @@ $mod_strings['LBL_SPARES_USED'] = 'Spares Used';
 
 $mod_strings['LBL_SOMETHING_WRONG'] = 'Opps, Something went wrong, Please try again later';
 $mod_strings['LBL_SERVICE_VISIT_UPDATED'] = 'Thank you for providing the updates, we will process the information as you have requested for.';
+
+$mod_strings['LBL_SELECT_PERSON_EMPTY_TITLE'] = 'Oops, Something went wrong please try again';
+$mod_strings['LBL_ALREADY_COMPLETED_TITLE'] = 'The service visit is marked as completed';

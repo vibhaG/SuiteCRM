@@ -24,7 +24,7 @@ if (empty($_POST['record_id']) || empty($_POST['formodule']) ) {
 $_POST['formodule'] = 'ProjectTask';
 $oServiceVisit = BeanFactory::getBean($_POST['formodule'], $_POST['record_id']);
 
-if(empty($oServiceVisit->id)){
+if(empty($oServiceVisit->id) || $oServiceVisit->status == 'Completed'){
     $xtpl->assign("message",$base_mod_string['LBL_SOMETHING_WRONG']);
     $xtpl->parse("captureconsent");
     $xtpl->out("captureconsent");
@@ -73,6 +73,10 @@ if(!empty($sSalesContract->ut_installation_project_1ut_installation_ida)) {
 $oServiceVisit->job_description = $_POST['job_description'];
 $oServiceVisit->pending_problem = $_POST['pending_problem'];
 $oServiceVisit->spares_used = $_POST['spares_used'];
+
+if(!empty($_POST['markCompleted'])&& $_POST['markCompleted'] ==  'Yes'){
+    $oServiceVisit->status ='Completed';
+}
 $oServiceVisit->save();
 
 $xtpl->assign("message",$base_mod_string['LBL_SERVICE_VISIT_UPDATED']);

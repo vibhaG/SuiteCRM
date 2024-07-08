@@ -23,7 +23,7 @@ array (
       array (
         0 => 
         array (
-          'file' => 'modules/ProjectTask/ProjectTask.js',
+          'file' => 'custom/modules/ProjectTask/ProjectTask.js',
         ),
       ),
       'form' => 
@@ -33,6 +33,7 @@ array (
           0 => 'EDIT',
           1 => 'DUPLICATE',
           2 => 'DELETE',
+          array('customCode' => '<input type="hidden" id="textToCopy" value="{$sServiceFormURL}"><input type="button" value="Copy service form" name="copyButtonServiceForm" id="copyButtonServiceForm" class="button" title="Copy service form">'),
         ),
         'hideAudit' => true,
       ),

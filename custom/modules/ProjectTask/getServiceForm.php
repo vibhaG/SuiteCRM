@@ -5,7 +5,7 @@ if (!defined('sugarEntry') || !sugarEntry) {
 require_once('XTemplate/xtpl.php');
 //require_once("custom/modules/Project/utils.php");
 global $mod_strings,$db,$app_strings,$app_list_strings,$current_language,$sugar_config;
-$base_mod_string = return_module_language($current_language,'Project');
+$base_mod_string = return_module_language($current_language,'ProjectTask');
 clean_special_arguments();
 clean_incoming_data();
 
@@ -29,10 +29,16 @@ if(empty($oServiceVisit->id)){
     return;
     exit();
 }
-
+if($oServiceVisit->status == 'Completed'){
+    $xtpl->parse("consentform.alreadycompleted");
+    $xtpl->parse("consentform");
+    $xtpl->out("consentform");
+    return;
+    exit();
+}
 
 $sCustomerName= $sCustomerPhone = $sCustomerEmail = $sServiceContractID = $sServiceEnginerName = $sSystemName = 
-$sSystemModel = $sSerialNumber = $sFirmwareVersion = $sSoftwareVersion = $sVisitNumber = $sEquipmentID = $sJobDescription = '';
+$sSystemModel = $sSerialNumber = $sFirmwareVersion = $sSoftwareVersion = $sVisitNumber = $sEquipmentID = $sJobDescription = $sServiceContractName = '';
 /*
 $sCustomerName='111';
 $sCustomerPhone='222';
@@ -61,6 +67,7 @@ $visit_type_list = get_select_options_with_id($visit_type,$oServiceVisit->visit_
 if(!empty($oServiceVisit->project_id)) {
     $sContractId = $oServiceVisit->project_id;
     $sSalesContract = BeanFactory::getBean('Project',$sContractId);
+    $sServiceContractName = $sSalesContract->name;
 }
 
 if(!empty($sSalesContract->ut_installation_project_1ut_installation_ida)) {
@@ -113,7 +120,7 @@ $xtpl->assign("visit_type_list", $visit_type_list);
 $xtpl->assign("sCustomerName", $sCustomerName);
 $xtpl->assign("sCustomerPhone", $sCustomerPhone);
 $xtpl->assign("sCustomerEmail", $sCustomerEmail);
-$xtpl->assign("sServiceContractID", $sServiceContractID);
+$xtpl->assign("sServiceContractID", $sServiceContractName);
 $xtpl->assign("sServiceEnginerName", $sServiceEnginerName);
 $xtpl->assign("sSystemName", $sSystemName);
 $xtpl->assign("sSystemModel", $sSystemModel);
@@ -124,7 +131,6 @@ $xtpl->assign("sSoftwareVersion", $sSoftwareVersion);
 $xtpl->assign("sVisitNumber", $sVisitNumber);
 $xtpl->assign("sEquipmentID", $sEquipmentID);
 $xtpl->assign("sJobDescription", $sJobDescription);
-
 
 $xtpl->parse("consentform.consentformdocument");
 $xtpl->parse("consentform");
