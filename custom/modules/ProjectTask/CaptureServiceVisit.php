@@ -79,6 +79,22 @@ if(!empty($_POST['markCompleted'])&& $_POST['markCompleted'] ==  'Yes'){
 }
 $oServiceVisit->save();
 
+// Save Subinstallation - Software and firmware
+if(!empty($_POST['sub_firmware_version'])) {
+    foreach($_POST['sub_firmware_version'] as $idx => $sFirmwareVersion) {
+        $oSubInstallation = BeanFactory::getBean('UT_Sub_Installation', $idx);
+        $oSubInstallation->sub_firmware_version = $sFirmwareVersion;
+        $oSubInstallation->save();
+    }
+}
+if(!empty($_POST['sub_software_version'])) {
+    foreach($_POST['sub_software_version'] as $idx => $sSoftwareVersion) {
+        $oSubInstallation = BeanFactory::getBean('UT_Sub_Installation', $idx);
+        $oSubInstallation->sub_software_version = $sSoftwareVersion;
+        $oSubInstallation->save();
+    }
+}
+
 $xtpl->assign("message",$base_mod_string['LBL_SERVICE_VISIT_UPDATED']);
 $xtpl->parse("captureconsent");
 $xtpl->out("captureconsent");

@@ -89,14 +89,18 @@ if(!empty($sSalesContract->ut_installation_project_1ut_installation_ida)) {
             $sSubProdName = $oSubInstProd->name;
         }
         $sSubInstallationsTRs .= '<tr>
-            <td>'.$oSubInstallation->name.'</td>
-            <td>'.$oSubInstallation->serial_number.'</td>
-            <td>'.$sSubProdName.'</td>
+            <td width="30%">'.$oSubInstallation->name.'</td>
+            <td width="15%">'.$oSubInstallation->serial_number.'</td>
+            <td width="30%">'.$sSubProdName.'</td>
+            <td width="25%">
+                <input type="text" class="form-control" style="width:40%; display:inline; " id="sub_firmware_version" name="sub_firmware_version['.$oSubInstallation->id.']" placeholder="Firmware Version" value="'.$oSubInstallation->sub_firmware_version.'" />
+                <input type="text" class="form-control" style="width:40%; display:inline;" id="sub_software_version" name="sub_software_version['.$oSubInstallation->id.']" placeholder="Software Version" value="'.$oSubInstallation->sub_software_version.'" />
+            </td>
         </tr>';
     }
     if(empty($sSubInstallationsTRs)){
         $sSubInstallationsTRs .= '<tr>
-            <td colspan="3">No Sub-Installations found</td>
+            <td colspan="4">No Sub-Installations found</td>
         </tr>';
     }
 }
