@@ -452,6 +452,8 @@ function edit_task(task){
     $('#Complete').val(data[8]);
     $('#Notes').val(data[9]);
     $('#Actual_duration').val(data[10]);
+    $('#visit_type_c').val(data[10]); // Added by Urdhva Tech
+
 
     $( "#template_dialog" ).dialog({
         autoOpen: true,
