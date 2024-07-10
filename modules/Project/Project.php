@@ -331,6 +331,7 @@ class Project extends SugarBean
         global $current_user;
         $db = DBManagerFactory::getInstance();
         $focus = $this;
+        $enddate_array = [];
 
         //--- check if project template is same or changed.
         $new_template_id = property_exists($focus, 'am_projecttemplates_project_1am_projecttemplates_ida') ?
@@ -551,7 +552,8 @@ class Project extends SugarBean
 
 
             //Get related project template tasks. Using sql query so that the results can be ordered.
-            $get_tasks_sql = "SELECT * FROM am_tasktemplates
+            $get_tasks_sql = "SELECT *,am_tasktemplates_cstm.* FROM am_tasktemplates
+                            LEFT JOIN am_tasktemplates_cstm ON   am_tasktemplates_cstm.id_c = am_tasktemplates.id
 							WHERE id
 							IN (
 								SELECT am_tasktemplates_am_projecttemplatesam_tasktemplates_idb
@@ -581,6 +583,8 @@ class Project extends SugarBean
                 $project_task->assigned_user_id = $row['assigned_user_id'];
                 $project_task->description = $row['description'];
                 $project_task->duration = $row['duration'];
+                $project_task->visit_type_c = $row['visit_type_c']; //urdhvatech
+                
                 $project_task->duration_unit = $duration_unit;
                 $project_task->project_task_id = $count;
 
@@ -610,7 +614,6 @@ class Project extends SugarBean
 
                 //----------------------------------
 
-                $enddate_array = [];
 
                 if ($count == '1') {
                     $project_task->date_start = $start;

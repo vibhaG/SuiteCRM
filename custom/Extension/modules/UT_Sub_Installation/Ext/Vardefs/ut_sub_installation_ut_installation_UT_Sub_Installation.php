@@ -31,3 +31,15 @@ $dictionary["UT_Sub_Installation"]["fields"]["ut_sub_installation_ut_installatio
   'side' => 'right',
   'vname' => 'LBL_UT_SUB_INSTALLATION_UT_INSTALLATION_FROM_UT_SUB_INSTALLATION_TITLE',
 );
+$dictionary["UT_Sub_Installation"]["fields"]['sub_firmware_version'] = array (
+    'name' => 'sub_firmware_version',
+    'vname' => 'LBL_SUB_FIRMWARE_VERSION',
+    'type' => 'varchar',
+    'len' => 50,
+);
+$dictionary["UT_Sub_Installation"]["fields"]['sub_software_version'] = array (
+    'name' => 'sub_software_version',
+    'vname' => 'LBL_SUB_SOFTWARE_VERSION',
+    'type' => 'varchar',
+    'len' => 50,
+);

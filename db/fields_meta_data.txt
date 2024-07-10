@@ -1,0 +1,4 @@
+INSERT INTO `fields_meta_data` (`id`, `name`, `vname`, `comments`, `help`, `custom_module`, `type`, `len`, `required`, `default_value`, `date_modified`, `deleted`, `audited`, `massupdate`, `duplicate_merge`, `reportable`, `importable`, `ext1`, `ext2`, `ext3`, `ext4`) VALUES
+('AM_TaskTemplatesvisit_type_c', 'visit_type_c', 'LBL_VISIT_TYPE', '', '', 'AM_TaskTemplates', 'enum', 100, 1, NULL, '2024-07-02 09:25:45', 0, 0, 0, 0, 1, 'true', 'visit_type_list', '', '', ''),
+('ProjectTaskvisit_type_c', 'visit_type_c', 'LBL_VISIT_TYPE', '', '', 'ProjectTask', 'enum', 100, 1, '', '2024-07-02 08:33:51', 0, 1, 0, 0, 1, 'true', 'visit_type_list', '', '', '');
+

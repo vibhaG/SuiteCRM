@@ -1,3 +1,5 @@
 <?php
-// created: 2024-04-10 07:40:17
+// created: 2024-07-02 13:40:14
 $mod_strings['LBL_AOS_INVOICES'] = 'Order';
+$mod_strings['LBL_PROJECTS'] = 'Service Contracts';
+$mod_strings['LBL_PROJECTS_SUBPANEL_TITLE'] = 'Service Contracts';
