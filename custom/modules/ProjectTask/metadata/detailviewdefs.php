@@ -33,7 +33,11 @@ array (
           0 => 'EDIT',
           1 => 'DUPLICATE',
           2 => 'DELETE',
-          array('customCode' => '<input type="hidden" id="textToCopy" value="{$sServiceFormURL}"><input type="button" value="Copy service form" name="copyButtonServiceForm" id="copyButtonServiceForm" class="button" title="Copy service form">'),
+          3 => array('customCode' => '<input type="hidden" id="textToCopy" value="{$sServiceFormURL}"><input type="button" value="Copy service form" name="copyButtonServiceForm" id="copyButtonServiceForm" class="button" title="Copy service form">'),
+          4 =>
+          array(
+            'customCode' => '<input type="button" class="button" onClick="showPopup(\'pdf\');" value="{$MOD.LBL_PRINT_AS_PDF}">',
+          ),
         ),
         'hideAudit' => true,
       ),

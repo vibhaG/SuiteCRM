@@ -21,3 +21,5 @@ $mod_strings['LBL_SERVICE_VISIT_UPDATED'] = 'Thank you for providing the updates
 
 $mod_strings['LBL_SELECT_PERSON_EMPTY_TITLE'] = 'Oops, Something went wrong please try again';
 $mod_strings['LBL_ALREADY_COMPLETED_TITLE'] = 'The service visit is marked as completed';
+$mod_strings['LBL_PRINT_AS_PDF'] = 'Print as PDF';
+$mod_strings['LBL_PDF_NAME'] = 'ServiceVisit';
