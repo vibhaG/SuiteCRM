@@ -212,7 +212,6 @@
             });
 
             $('#saveCompletedButton').click(function() {
-                alert('come shere');
                 $('#markCompleted').val('Yes');
                 $('#service_request_form').submit();
             });

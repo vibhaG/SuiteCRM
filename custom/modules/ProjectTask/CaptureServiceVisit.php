@@ -94,6 +94,13 @@ if(!empty($_POST['sub_software_version'])) {
         $oSubInstallation->save();
     }
 }
+if(!empty($_POST['sub_description'])) {
+    foreach($_POST['sub_description'] as $idx => $sSubDescription) {
+        $oSubInstallation = BeanFactory::getBean('UT_Sub_Installation', $idx);
+        $oSubInstallation->description = $sSubDescription;
+        $oSubInstallation->save();
+    }
+}
 
 $xtpl->assign("message",$base_mod_string['LBL_SERVICE_VISIT_UPDATED']);
 $xtpl->parse("captureconsent");

@@ -95,6 +95,7 @@ if(!empty($sSalesContract->ut_installation_project_1ut_installation_ida)) {
             <td width="25%">
                 <input type="text" class="form-control" style="width:40%; display:inline; " id="sub_firmware_version" name="sub_firmware_version['.$oSubInstallation->id.']" placeholder="Firmware Version" value="'.$oSubInstallation->sub_firmware_version.'" />
                 <input type="text" class="form-control" style="width:40%; display:inline;" id="sub_software_version" name="sub_software_version['.$oSubInstallation->id.']" placeholder="Software Version" value="'.$oSubInstallation->sub_software_version.'" />
+                <input type="text" class="form-control" style="width:100%; display:inline;" id="sub_description" name="sub_description['.$oSubInstallation->id.']" placeholder="Description" value="'.$oSubInstallation->description.'" />
             </td>
         </tr>';
     }
