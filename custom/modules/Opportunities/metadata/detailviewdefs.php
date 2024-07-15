@@ -52,6 +52,23 @@ array(
           1 => 'DUPLICATE',
           2 => 'DELETE',
           3 => 'FIND_DUPLICATES',
+          4 =>
+          array(
+            'customCode' => '<input type="submit" class="button" onClick="this.form.action.value=\'convertToQuote\';" value="{$MOD.LBL_CONVERT_TO_QUOTE}">',
+            'sugar_html' =>
+            array(
+              'type' => 'submit',
+              'value' => '{$MOD.LBL_CONVERT_TO_QUOTE}',
+              'htmlOptions' =>
+              array(
+                'class' => 'button',
+                'id' => 'convert_to_quote_button',
+                'title' => '{$MOD.LBL_CONVERT_TO_QUOTE}',
+                'onclick' => 'this.form.action.value=\'convertToQuote\';',
+                'name' => 'Convert to Quote',
+              ),
+            ),
+          ),
         ),
       ),
       'maxColumns' => '2',
@@ -163,13 +180,61 @@ array(
          0 => '',
        ),
        3 =>
-       array(
-         0 =>
-         array(
-           'name' => 'total_amt',
-           'label' => 'LBL_TOTAL_AMT',
-         ),
-       ),
+        array(
+          0 =>
+          array(
+            'name' => 'total_amt',
+            'label' => 'LBL_TOTAL_AMT',
+          ),
+        ),
+        4 =>
+        array(
+          0 =>
+          array(
+            'name' => 'discount_amount',
+            'label' => 'LBL_DISCOUNT_AMOUNT',
+          ),
+        ),
+        5 =>
+        array(
+          0 =>
+          array(
+            'name' => 'subtotal_amount',
+            'label' => 'LBL_SUBTOTAL_AMOUNT',
+          ),
+        ),
+        6 =>
+        array(
+          0 =>
+          array(
+            'name' => 'shipping_amount',
+            'label' => 'LBL_SHIPPING_AMOUNT',
+          ),
+        ),
+        7 =>
+        array(
+          0 =>
+          array(
+            'name' => 'shipping_tax_amt',
+            'label' => 'LBL_SHIPPING_TAX_AMT',
+          ),
+        ),
+        8 =>
+        array(
+          0 =>
+          array(
+            'name' => 'tax_amount',
+            'label' => 'LBL_TAX_AMOUNT',
+          ),
+        ),
+        9 =>
+        array(
+          0 =>
+          array(
+            'name' => 'total_amount',
+            'label' => 'LBL_GRAND_TOTAL',
+          ),
+        ),
      ),
       'LBL_PANEL_ASSIGNMENT' =>
       array(
