@@ -87,6 +87,20 @@ array (
             'name' => 'ut_sub_installation_ut_installation_name',
           ),
         ),
+        4 => 
+        array (
+          0 => array (
+            'name' => 'sub_firmware_version',
+            'studio' => 'visible',
+            'label' => 'LBL_SUB_FIRMWARE_VERSION',
+          ),
+          1 => 
+          array (
+            'name' => 'sub_software_version',
+            'studio' => 'visible',
+            'label' => 'LBL_SUB_SOFTWARE_VERSION',
+          ),
+        ),
       ),
     ),
   ),

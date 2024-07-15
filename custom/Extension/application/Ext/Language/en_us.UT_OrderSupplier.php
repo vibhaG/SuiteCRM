@@ -20,3 +20,6 @@ $app_list_strings['moduleList']['UT_OrderSupplier'] = 'Order Suppliers';
 $app_list_strings['product_quote_parent_type_dom']['UT_OrderSupplier'] = 'Order Suppliers';
 $app_list_strings['pdf_template_type_dom']['UT_OrderSupplier'] = 'Order Suppliers';
 $app_list_strings['parent_line_items']['UT_OrderSupplier']='Order Suppliers';
+
+$app_list_strings['pdf_template_type_dom']['ProjectTask'] = 'Service Visit';
+$app_list_strings['pdf_template_type_dom']['UT_Installation'] = 'Installation';

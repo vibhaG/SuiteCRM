@@ -487,7 +487,7 @@ class actionSendEmail extends actionBase
         $mail->ClearAllRecipients();
         $mail->ClearReplyTos();
         $mail->Subject=from_html($emailSubject);
-        $mail->Body=$emailBody;
+        $mail->Body=from_html($emailBody); // Added by Urdhva Tech
         if($altemailBody){
             $mail->AltBody = $altemailBody;
         }

@@ -103,3 +103,4 @@ while ($row = $db->fetchByAssoc($result)) {
 }
 ob_clean();
 header('Location: index.php?module=AOS_Quotes&action=EditView&record='.$oQuote->id);
+
