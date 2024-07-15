@@ -8,7 +8,7 @@ class OppLineItemSave
     * @param Array $event
     * @param Array $argument
     */
-    public function OppLineItemSave($bean,$event,$argument) { 
+    public function OppLineItemSaveFun($bean,$event,$argument) { 
         require_once('modules/AOS_Products_Quotes/AOS_Utils.php');
         perform_aos_save($bean);
         require_once('modules/AOS_Line_Item_Groups/AOS_Line_Item_Groups.php');
