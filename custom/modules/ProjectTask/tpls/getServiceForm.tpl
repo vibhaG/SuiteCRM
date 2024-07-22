@@ -175,11 +175,11 @@
                                 </div>
                                 <div class="form-group">
                                    <label for="pending_problem" class="">Pending Problem (s)</label>
-                                   <textarea class="form-control" name="pending_problem" cols="60"></textarea>
+                                   <textarea class="form-control" name="pending_problem" cols="60">{sPending_problem}</textarea>
                                 </div>
                                 <div class="form-group">
                                    <label for="spares_used" class="">Spares used</label>
-                                   <textarea class="form-control" name="spares_used" cols="60"></textarea>
+                                   <textarea class="form-control" name="spares_used" cols="60">{sSpares_used}</textarea>
                                 </div>
                                 <div class="row">
                                    <div class="col-md-12">
