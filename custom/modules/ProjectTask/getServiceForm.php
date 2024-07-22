@@ -163,6 +163,8 @@ $xtpl->assign("sSubInstallationsTRs", $sSubInstallationsTRs);
 $xtpl->assign("sVisitNumber", $sVisitNumber);
 $xtpl->assign("sEquipmentID", $sEquipmentID);
 $xtpl->assign("sJobDescription", $sJobDescription);
+$xtpl->assign("sPending_problem", $sPending_problem);
+$xtpl->assign("sSpares_used", $sSpares_used);
 
 $xtpl->parse("consentform.consentformdocument");
 $xtpl->parse("consentform");
