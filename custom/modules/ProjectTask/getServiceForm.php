@@ -38,7 +38,8 @@ if($oServiceVisit->status == 'Completed'){
 }
 
 $sCustomerName= $sCustomerPhone = $sCustomerEmail = $sServiceContractID = $sServiceEnginerName = $sSystemName = 
-$sSystemModel = $sSerialNumber = $sFirmwareVersion = $sSoftwareVersion = $sVisitNumber = $sEquipmentID = $sJobDescription = $sServiceContractName = '';
+$sSystemModel = $sSerialNumber = $sFirmwareVersion = $sSoftwareVersion = $sVisitNumber = $sEquipmentID = $sJobDescription
+    = $sServiceContractName = $sPending_problem =$sSpares_used='';
 $sSubInstallationsTRs = '';
 /*
 $sCustomerName='111';
@@ -58,6 +59,8 @@ $sContractId = $sInstallationId = $sAccountsId = $sProductId = $sSubInstallation
 
 $sVisitNumber = $oServiceVisit->task_number;
 $sJobDescription = $oServiceVisit->job_description;
+$sPending_problem = $oServiceVisit->pending_problem;
+$sSpares_used = $oServiceVisit->spares_used;
 
 $oUser = BeanFactory::getBean('Users',$oServiceVisit->assigned_user_id);
 $sServiceEnginerName = $oUser->full_name;
@@ -160,6 +163,8 @@ $xtpl->assign("sSubInstallationsTRs", $sSubInstallationsTRs);
 $xtpl->assign("sVisitNumber", $sVisitNumber);
 $xtpl->assign("sEquipmentID", $sEquipmentID);
 $xtpl->assign("sJobDescription", $sJobDescription);
+$xtpl->assign("sPending_problem", $sPending_problem);
+$xtpl->assign("sSpares_used", $sSpares_used);
 
 $xtpl->parse("consentform.consentformdocument");
 $xtpl->parse("consentform");

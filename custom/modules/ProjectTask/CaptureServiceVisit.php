@@ -76,6 +76,8 @@ $oServiceVisit->spares_used = $_POST['spares_used'];
 
 if(!empty($_POST['markCompleted'])&& $_POST['markCompleted'] ==  'Yes'){
     $oServiceVisit->status ='Completed';
+}else{
+    $oServiceVisit->status ='In Progress';
 }
 $oServiceVisit->save();
 
