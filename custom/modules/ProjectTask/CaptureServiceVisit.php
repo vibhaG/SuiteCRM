@@ -30,6 +30,7 @@ if(empty($oServiceVisit->id) || $oServiceVisit->status == 'Completed'){
     $xtpl->out("captureconsent");
     exit();
 }
+
 /*
 $aCheckbox = $aTempChk = array();
 $iFlag=false;
