@@ -9,5 +9,12 @@ $hook_array['after_relationship_add'][] = [
     'SaveHooks',
     'UpdateInstallation'
 ];
+$hook_array['after_relationship_add'][] = [
+    5,
+    'Update spares in customer site to Project Task',
+    'custom/modules/ProjectTask/logic_hooks/UpdateSpares_customer.php',
+    'SparesUpdation',
+    'UpdateSparesCustomer'
+];
 ?>
 
