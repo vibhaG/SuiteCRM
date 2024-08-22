@@ -11,7 +11,7 @@ class SparesUpdation {
         // Loop through the related beans and perform your logic
         $spareList = '';
         foreach ($relatedBeans as $relatedBean) {
-            $spareList = $spareList + $relatedBean->name + ', ';
+            $spareList = $spareList + $relatedBean + ', ';
         }
         $bean->spares_used = $spareList;
         // Save the bean with the updated field
