@@ -9,6 +9,9 @@ $hook_array['after_relationship_add'][] = [
     'SaveHooks',
     'UpdateInstallation'
 ];
+$hook_array['before_save'] = Array();
 
+$hook_array['before_save'][] = Array(1,
+'Generate custom identifier with prefix',
+'custom/modules/ProjectTask/GenerateIdentifier.php','GenerateIdentifier','generateCustomIdentifier');
 ?>
-
