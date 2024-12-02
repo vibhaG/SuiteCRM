@@ -26,32 +26,32 @@
          .font-poppins {
          font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
          }
-         fieldset 
+         fieldset
          {
          border: 1px solid #ddd !important;
          margin: 0;
          xmin-width: 0;
-         padding: 10px;       
+         padding: 10px;
          position: relative;
          border-radius:4px;
          background-color:#f5f5f5;
          padding-left:10px!important;
-         }    
+         }
          legend
          {
          font-size:14px;
          font-weight:bold;
-         margin-bottom: 0px; 
+         margin-bottom: 0px;
          /*width: 35%; */
          border: 1px solid #ddd;
-         border-radius: 4px; 
-         padding: 5px 5px 5px 10px; 
+         border-radius: 4px;
+         padding: 5px 5px 5px 10px;
          background-color: #ffffff;
          }
          .requiredMark:after{
          color:#f06269;
-         content: " *"; 
-         color: #F00; 
+         content: " *";
+         color: #F00;
          font-size: 90%;
          }
       </style>
@@ -85,7 +85,7 @@
                                             <h3 class="title">Service Visit Report</h3>
                                        </div>
                                 </div>
-                             
+
                              <div class="row">
                                 <div class="col-md-12">
                                     <p style="margin-top:30px;"></p>
@@ -96,27 +96,27 @@
                                 <input type="hidden" name="record_id" value="{record_id}">
                                 <input type="hidden" name="formodule" value="{formodule}">
                                 <input type="hidden" name="markCompleted" id="markCompleted" value="">
-                                
+
                                 <div class="form-row">
                                    <div class="form-group col-md-12">
                                       <label for="customer_name" class="">Customer's Name</label>
-                                      <input type="text" class="form-control" id="customer_name" name="customer_name" placeholder="Customer's Name" readonly="readonly" value="{sCustomerName}">
+                                      <input type="text" class="form-control" id="customer_name" name="customer_name" placeholder="Customer's Name" value="{sCustomerName}">
                                    </div>
                                 </div>
                                 <div class="form-row">
                                    <div class="form-group col-md-6">
                                       <label for="phone_mobile" class="">Phone Number</label>
-                                      <input type="text" class="form-control" id="phone_mobile" name="phone_mobile" placeholder="Phone Number" readonly="readonly" value="{sCustomerPhone}">
+                                      <input type="text" class="form-control" id="phone_mobile" name="phone_mobile" placeholder="Phone Number"  value="{sCustomerPhone}">
                                    </div>
                                    <div class="form-group col-md-6">
                                       <label for="email1" class="">Email</label>
-                                      <input type="email" class="form-control" id="email1" name="email1" placeholder="Email" readonly="readonly" value="{sCustomerEmail}">
+                                      <input type="email" class="form-control" id="email1" name="email1" placeholder="Email"  value="{sCustomerEmail}">
                                    </div>
                                 </div>
                                 <div class="form-row">
                                    <div class="form-group col-md-6">
                                       <label for="service_visit_type" class="">Visit type</label>
-                                      <select id="service_visit_type" name="service_visit_type" class="form-control js-select-simple" readonly="readonly" disabled="disabled" >
+                                      <select id="service_visit_type" name="service_visit_type" class="form-control js-select-simple"  disabled="disabled" >
                                          <option disabled="disabled" selected="selected">Choose Visit</option>
                                          {visit_type_list}
                                       </select>
@@ -137,11 +137,11 @@
                                 <div class="form-row">
                                    <div class="form-group col-md-6">
                                       <label for="first_name" class="">System Name</label>
-                                      <input type="text" class="form-control" id="system_name" name="system_name" placeholder="System Name" readonly="readonly" value="{sSystemName}">
+                                      <input type="text" class="form-control" id="system_name" name="system_name" placeholder="System Name"  value="{sSystemName}">
                                    </div>
                                    <div class="form-group col-md-6">
                                       <label for="system_model" class="">System Model</label>
-                                      <input type="text" class="form-control" id="system_model" name="system_model" placeholder="System Model" readonly="readonly" value="{sSystemModel}">
+                                      <input type="text" class="form-control" id="system_model" name="system_model" placeholder="System Model"  value="{sSystemModel}">
                                    </div>
                                 </div>
                                 <div class="form-group">
@@ -191,7 +191,7 @@
                              </form>
                           </div>
 <!-- END: consentformdocument -->
-                    
+
                 </div>
             </div>
          </div>
@@ -205,7 +205,7 @@
              } catch (err) {
                  console.log(err);
              }
-             
+
             $('#submitButton').click(function() {
                $('#markCompleted').val('');
                $('#service_request_form').submit();
@@ -215,9 +215,9 @@
                 $('#markCompleted').val('Yes');
                 $('#service_request_form').submit();
             });
-             
+
          })(jQuery);
       </script>
    </body>
-</html>                
+</html>
 <!-- END: consentform -->
