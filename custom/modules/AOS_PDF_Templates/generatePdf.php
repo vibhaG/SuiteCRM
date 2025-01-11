@@ -136,7 +136,7 @@ $converted = templateParser::parse_template($text, $object_arr);
 $header = templateParser::parse_template($header, $object_arr);
 $footer = templateParser::parse_template($footer, $object_arr);
 
-$printable = str_replace("\n", "<br />", (string) $converted);
+$printable = $converted;
 
 if ($task === 'pdf' || $task === 'emailpdf') {
     $file_name = $mod_strings['LBL_PDF_NAME'] . "_" . str_replace(" ", "_", (string) $bean->name) . ".pdf";
@@ -177,6 +177,21 @@ if ($task === 'pdf' || $task === 'emailpdf') {
     $sendEmail = new sendEmail();
     $sendEmail->send_email($bean, $bean->module_dir, $printable, '', false);
 }
+$focus = BeanFactory::getBean('UT_Installation', $record_id); // Load Installation record
+$relatedRecords = $focus->get_linked_beans('ut_sub_installation_ut_installation', 'UT_Sub_Installation'); // Fetch related Sub Installation records
+
+// Prepare Sub Installation data for use in the template
+$subInstallations = [];
+foreach ($relatedRecords as $related) {
+    $subInstallations[] = [
+        'name' => $related->name,
+        'serial_number' => $related->serial_number,
+        'field2' => $related->field2_c,
+    ];
+}
+
+// Assign Sub Installation data to the template
+$smarty->assign('UT_Sub_Installation', $subInstallations);
 
 
 function populate_group_lines($text, $lineItemsGroups, $lineItems, $element = 'table')

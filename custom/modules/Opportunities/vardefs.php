@@ -544,6 +544,7 @@ $dictionary['Opportunity'] = array('table' => 'opportunities', 'audited' => true
                    'len' => '26,6',
                ),
 
+
         'accounts' =>
             array(
                 'name' => 'accounts',
@@ -583,6 +584,26 @@ $dictionary['Opportunity'] = array('table' => 'opportunities', 'audited' => true
                 'source' => 'non-db',
                 'vname' => 'LBL_NOTES',
             ),
+            'aos_products_quotes' =>
+                array(
+                    'name' => 'aos_products_quotes',
+                    'vname' => 'LBL_AOS_PRODUCT_QUOTES',
+                    'type' => 'link',
+                    'relationship' => 'opportunity_aos_product_quotes',
+                    'module' => 'AOS_Products_Quotes',
+                    'bean_name' => 'AOS_Products_Quotes',
+                    'source' => 'non-db',
+                ),
+            'aos_line_item_groups' =>
+                array(
+                    'name' => 'aos_line_item_groups',
+                    'vname' => 'LBL_AOS_LINE_ITEM_GROUPS',
+                    'type' => 'link',
+                    'relationship' => 'opportunities_aos_products_quotes_1',
+                    'module' => 'AOS_Line_Item_Groups',
+                    'bean_name' => 'AOS_Line_Item_Groups',
+                    'source' => 'non-db',
+                ),
         'meetings' =>
             array(
                 'name' => 'meetings',

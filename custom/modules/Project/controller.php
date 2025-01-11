@@ -215,7 +215,8 @@ class ProjectController extends SugarController
         $tid = $count+1;
 
         if ($this->IsNullOrEmptyString($task_id)) {
-            $this->create_task($task_name, $start, $enddate, $project_id, $milestone_flag, $status, $tid, $predecessor, $rel_type, $duration, $duration_unit, $resource, $percent, $note, $actual_duration, $tid,$visit_type); //urdhvatech
+            $this->create_task($task_name, $start, $enddate, $project_id, $milestone_flag, $status, $tid, $predecessor,
+                $rel_type, $duration, $duration_unit, $resource, $percent, $note, $actual_duration, $tid,$visit_type); //urdhvatech
         } else {
             $this->update_task($task_id, $task_name, $start, $enddate, $project_id, $milestone_flag, $status, $predecessor, $rel_type, $duration, $duration_unit, $resource, $percent, $note, $actual_duration,$visit_type);//urdhvatech
         }
@@ -288,7 +289,10 @@ class ProjectController extends SugarController
     }
 
 
-    public function create_task($name, $start, $end, $project_id, $milestone_flag, $status, $project_task_id, $predecessors, $rel_type, $duration, $duration_unit, $resource, $percent_complete, $description, $actual_duration, $order_number,$visit_type)
+    public function create_task($name, $start, $end,
+                                $project_id, $milestone_flag, $status, $project_task_id, $predecessors,
+                                $rel_type, $duration, $duration_unit, $resource, $percent_complete,
+                                $description, $actual_duration, $order_number,$visit_type)
     {
         $task = BeanFactory::newBean('ProjectTask');
         $task->name = $name;

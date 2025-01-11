@@ -2,7 +2,7 @@
 if (!defined('sugarEntry') || !sugarEntry) {
     die('Not A Valid Entry Point');
 }
-class ProjectTaskViewDetail extends ViewDetail
+class OpportunitiesViewDetail extends ViewDetail
 {
     public function __construct()
     {
@@ -20,16 +20,16 @@ class ProjectTaskViewDetail extends ViewDetail
         $sServiceFormURL = $sugar_config['site_url'].'/index.php?entryPoint=getServiceForm&cid='.$this->bean->id;
         $this->ss->assign("sServiceFormURL", $sServiceFormURL);
 
-        $this->populateProjectTaskTemplates();
+        $this->populateOpportunitiesTemplates();
         $this->displayPopupHtml();
         echo $this->dv->display();
     }
 
-    public function populateProjectTaskTemplates()
+    public function populateOpportunitiesTemplates()
     {
         global $app_list_strings;
 
-        $sql = "SELECT id, name FROM aos_pdf_templates WHERE deleted = 0 AND type='ProjectTask' AND active = 1";
+        $sql = "SELECT id, name FROM aos_pdf_templates WHERE deleted = 0 AND type='Opportunities' AND active = 1";
 
         $res = $this->bean->db->query($sql);
         $app_list_strings['template_ddown_c_list'] = array();
